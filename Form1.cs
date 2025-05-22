@@ -17,7 +17,29 @@ namespace V1._0
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    string taskName = txtTask.Text.Trim();
+        //    string dueDateText = txtDueDate.Text.Trim();
+
+        //    if (string.IsNullOrWhiteSpace(taskName) || string.IsNullOrWhiteSpace(dueDateText))
+        //    {
+        //        MessageBox.Show("Task name and due date cannot be empty.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+        //    DateTime dueDate;
+        //    if (!DateTime.TryParse(dueDateText, out  dueDate))
+        //    {
+        //        MessageBox.Show("Please enter a valid date in the format MM/DD/YYYY.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    listBoxTasks.Items.Add(taskName + " - Due: " + dueDate.ToShortDateString());
+        //    txtTask.Clear();
+        //    txtDueDate.Clear();
+        //}
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
             string taskName = txtTask.Text.Trim();
             string dueDateText = txtDueDate.Text.Trim();
@@ -37,6 +59,49 @@ namespace V1._0
             listBoxTasks.Items.Add(taskName + " - Due: " + dueDate.ToShortDateString());
             txtTask.Clear();
             txtDueDate.Clear();
+        }
+
+        private void lblDueDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTask_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDueDate_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTask_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (listBoxTasks.SelectedIndex != -1)
+            {
+                listBoxTasks.Items.RemoveAt(listBoxTasks.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please select a task to delete.", "Delete Task", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtTask.Clear();
+            txtDueDate.Clear();
+        }
+
+        private void listBoxTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
